@@ -6,6 +6,13 @@ on:
 jobs:
   build:
     name: Build
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-latest
+          - windows-latest
+          - macos-latest
     runs-on: ubuntu-latest
     steps:
       - name: Set up JDK 21
